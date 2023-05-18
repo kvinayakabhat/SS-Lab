@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Functions</title>
+  <script>
+    function leftMostVowel(str) {
+      const vowels = ['a', 'e', 'i', 'o', 'u'];
+      for (let i = 0; i < str.length; i++) {
+        if (vowels.includes(str[i])) {
+          return i;
+        }
+      }
+      return -1;
+    }
+
+    function reverseNumber(num) {
+      let reversed = 0;
+      while (num > 0) {
+        reversed = (reversed * 10) + (num % 10);
+        num = Math.floor(num / 10);
+      }
+      return reversed;
+    }
+  </script>
+</head>
+<body>
+  <h1>JavaScript Functions</h1>
+
+  <p>Position of the leftmost vowel in "hello": <span id="vowelPos"></span></p>
+  <p>Reverse of the number 12345: <span id="reverseNum"></span></p>
+
+  <script>
+    const str = "hello";
+    const num = 12345;
+
+    document.getElementById("vowelPos").innerHTML = leftMostVowel(str);
+    document.getElementById("reverseNum").innerHTML = reverseNumber(num);
+  </script>
+</body>
+</html>
